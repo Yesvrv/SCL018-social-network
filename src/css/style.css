@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@500&display=swap');
+
 @font-face {
   font-family: Tomorrow-medium;
   src: url("/resources/fonts/Tomorrow/Tomorrow-Medium.ttf");
@@ -83,7 +85,7 @@ header {
 .login-title {
   height: 44px;
   justify-self: center;
-  font-family: Tomorrow-light;
+  font-family: Tomorrow-medium;
   font-weight: normal;
   font-size: 36px;
   line-height: 43px;
@@ -295,6 +297,11 @@ header {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.trash-icon:hover, .edit-icon:hover, .logout-icon:hover{
+  background-color: rgb(211, 99, 242);
+  box-shadow: 0 0 10px rgb(211, 99, 242);
 }
 
 .textarea-container {

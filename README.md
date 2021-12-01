@@ -13,6 +13,7 @@
 ## 1. Definición  
 
 La página Gamer Girl nace ante la necesidad de nuestras usuarias (mujeres gamers y aficionadas a los videojuegos) de publicar y acceder a información de otras usuarias para compartir sus usuarios y poder jugar en línea con otras mujeres. Esta necesidad nace por la creciente demanda de este tipo de plataformas y la necesidad de crear entornos seguros y respetuosos de entretención.
+
 ## 2. Definición del producto
 
 Gamer Girl, es una red social que permitirá a las usuarias registrarse, logear con dichas credenciales o logear directamente con una cuenta asociada a los servicios de Google. Una vez logeadas estas credenciales, la usuaria podrá realizar un post en donde podrá poner con un # el juego de su interés o la plataforma en la que está jugando. Luego, podrá ingresar el contenido y su nombre de usuario. 
@@ -78,7 +79,7 @@ Durante el desarrollo del proyecto se realizaron entrevistas personales y en gru
 ![](src/resources/images/wall-mobile.PNG)
 
 ## 7. Link al sitio 
-https://claudgomezg.github.io/SCL018-social-network/src/
+https://gamer-girl-scl018.firebaseapp.com/
 
 # Creado por 💜:
 
