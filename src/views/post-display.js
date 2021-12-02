@@ -44,7 +44,6 @@ export const newPost = (posts) => {
       </div>`;
     }
     newPostContainer.innerHTML += feedHtml;
-    // buscar si es template ${postsValues[0].id} debe ir entre comillas o no
   };
   posts.forEach(feedContent);
 
