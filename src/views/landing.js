@@ -63,15 +63,11 @@ export const landingPage = () => {
     userLogin();
     window.location.hash = "#/wall";
   });
-  containerLanding
-    .querySelector(".register-btn")
-    .addEventListener("click", () => {
-      window.location.hash = "#/register";
-    });
-  containerLanding
-    .querySelector("#googleLogin")
-    .addEventListener("click", () => {
-      loginWithGoogle();
-    });
+  containerLanding.querySelector(".register-btn").addEventListener("click", () => {
+    window.location.hash = "#/register";
+  });
+  containerLanding.querySelector("#googleLogin").addEventListener("click", () => {
+    loginWithGoogle();
+  });
   return containerLanding;
 };

@@ -1,13 +1,13 @@
 /* eslint-disable no-alert */
 /* eslint-disable import/no-unresolved */
+
+// importamos las funciones de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 import {
   getAuth,
-  // eslint-disable-next-line no-unused-vars
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-  // getRedirectResult,
   signInWithPopup,
   onAuthStateChanged,
   signOut,
@@ -43,6 +43,7 @@ export const signUp = () => {
   const signUpEmail = document.getElementById("emailSignUp").value;
   const signUpPassword = document.getElementById("passwordSignUp").value;
   const signUpUserName = document.getElementById("userSignUp").value;
+
   if (
     signUpPassword.length < 6
     && signUpEmail === ""
@@ -64,13 +65,15 @@ export const signUp = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        alert("usuario creado");
         console.log(user);
         return user;
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        if (errorMessage) {
+          alert(`error de registro, favor revisar sus datos ${errorMessage}`);
+        }
         return errorCode + errorMessage;
       });
   }
@@ -85,12 +88,14 @@ export const userLogin = () => {
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       .then((userCredential) => {
         const user = userCredential.user;
-        // const mail = userCredential.user.mail;
         return user;
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        if (errorMessage) {
+          alert("Antes de iniciar sesión primero registrate o comprueba los datos ingresados");
+        }
         return errorCode + errorMessage;
       });
   }
@@ -98,31 +103,31 @@ export const userLogin = () => {
 
 export const loginWithGoogle = () => {
   signInWithPopup(auth, provider)
-    // getRedirectResult(auth)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access Google APIs.
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-      console.log(user.displayName);
-      console.log("usuario creado con google");
       return `${user} + logged in with google + ${token}`;
     })
+
     .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       // The email of the user's account used.
       const email = error.email;
-      console.log(error);
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
-      console.log("usuario no creado");
+      if (errorMessage) {
+        alert("usuario no creado");
+      }
       return errorMessage + errorCode + email + credential;
     });
 };
 
+// función para agregar datos en firestore
 export const postData = async (postTheme, postMessage) => {
   const docRef = await addDoc(collection(db, "publicaciones"), {
     username: auth.currentUser.displayName,
@@ -135,39 +140,37 @@ export const postData = async (postTheme, postMessage) => {
   return docRef;
 };
 
+// función para escuchar varios documentos en una colección y función callback la muestra.
 export const readData = (callback, publicaciones) => {
   const q = query(collection(db, publicaciones), orderBy("datePost", "desc"));
   onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((document) => {
-      // console.log(document);
       const element = {};
       element.id = document.id;
       element.data = document.data();
       posts.push({ element });
-      // console.log(element);
     });
     callback(posts);
   });
 };
 
+// función para salir de la app
 export const logOut = () => {
   signOut(auth)
     .then(() => {
       window.location.hash = "#/landing";
-      console.log(`bai bai`);
     })
     .catch((error) => {
-      console.log(error);
+      alert(`ocurrio un error: ${error}`);
     });
 };
 
+// función para observador en el objeto Auth. Obtiene el usuario de una sesión activa.
 export const observer = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       window.location.hash = "#/wall";
-      const uid = user.uid;
-      console.log(`bienvenida ${uid}`);
     } else if (!user) {
       if (window.location.hash !== "#/register") {
         logOut();
@@ -176,15 +179,15 @@ export const observer = () => {
   });
 };
 
+// función para eliminar los posts de la consola.
 export const deletePost = async (id) => {
   await deleteDoc(doc(db, "publicaciones", id));
-  console.log(id);
 };
 
+// función para actualizar un documento.
 export const updatePost = async (id, themeUpdate, messageUpdate) => {
   const uniquePost = doc(db, "publicaciones", id);
   await updateDoc(uniquePost, {
-    // id: idUpdate,
     theme: themeUpdate,
     message: messageUpdate,
   });

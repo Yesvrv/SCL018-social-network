@@ -2,9 +2,8 @@ import { landingPage } from "./landing.js";
 import { register } from "./register.js";
 import { wall } from "./wall.js";
 
-// probar sin el # gatito
-
 export const routes = (hash) => {
+  // cambiar menuRegister por una variable más descriptiva como "hashUpdate"
   const menuRegister = document.getElementById("root");
   menuRegister.innerHTML = "";
   if (hash === "#/" || hash === "/" || hash === "#" || hash === "") {
