@@ -51,16 +51,8 @@ Por último, podrá desloguearse de la página al pulsar un ícono de salida en 
 
 ![](src/resources/images/high-quality-prototype-2.png)
 
-## 5. Test de usabilidad 
 
-Durante el desarrollo del proyecto se realizaron entrevistas personales y en grupo a distintos usuarios para probar la usabilidad del prototipo y se llegó a la conclusión de que era necesario modificar algunos elementos para mejorar su comportamiento. A raíz de ello, se agregó lo siguiente:
-
-- Se modificaron los colores de la página.
-- Se modificó el fondo de la página.
-- Se modificaron los íconos que redirigen a las páginas de las plataformas de juegos.
-- Se modificó la opacidad del landing page para facilitar la lectura.
-- Se agregaron hover en algunos elementos con colores neón.
-## 6. Página finalizada
+## 5. Página finalizada
 
 *Landing Desktop*
 
@@ -83,4 +75,4 @@ https://gamer-girl-scl018.firebaseapp.com/
 
 # Creado por 💜:
 
-## *Claudia Gómez, Yésika Rodríguez y Susan Ortiz*
+## *Claudia Gómez, Yesika Rodríguez y Susan Ortiz*
