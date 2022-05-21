@@ -5,8 +5,8 @@
 * [2. Definición del producto](#2-definición-del-producto)
 * [3. Historias de usuario](#3-historias-de-usuario)
 * [4. Prototipos](#4-prototipos)
-* [5. Página Finalizada](#6-página-finalizada)
-* [6. Link al sitio](#7-link-al-sitio)
+* [5. Página Finalizada](#5-página-finalizada)
+* [6. Link al sitio](#6-link-al-sitio)
 
 ***
 ## 1. Definición  
