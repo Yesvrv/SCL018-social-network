@@ -5,9 +5,8 @@
 * [2. Definición del producto](#2-definición-del-producto)
 * [3. Historias de usuario](#3-historias-de-usuario)
 * [4. Prototipos](#4-prototipos)
-* [5. Test de Usabilidad](#5-test-de-usabilidad)
-* [6. Página Finalizada](#6-página-finalizada)
-* [7. Link al sitio](#7-link-al-sitio)
+* [5. Página Finalizada](#6-página-finalizada)
+* [6. Link al sitio](#7-link-al-sitio)
 
 ***
 ## 1. Definición  
@@ -70,7 +69,7 @@ Por último, podrá desloguearse de la página al pulsar un ícono de salida en 
 
 ![](src/resources/images/wall-mobile.PNG)
 
-## 7. Link al sitio 
+## 6. Link al sitio 
 https://gamer-girl-scl018.firebaseapp.com/
 
 # Creado por 💜:
